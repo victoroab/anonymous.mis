@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
-const dbUri = 'mongodb://127.0.0.1:27017/anoyomousMIS'
+// const dbUri = 'mongodb://127.0.0.1:27017/anoyomousMIS'
+const dbUri =
+  'mongodb+srv://boluajayi:bolu123@wbps.ea7oow1.mongodb.net/?retryWrites=true&w=majority'
 
 mongoose.set('strictQuery', false)
 
