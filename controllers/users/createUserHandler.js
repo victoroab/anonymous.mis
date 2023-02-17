@@ -1,9 +1,9 @@
 const User = require('../../models/users/user')
 
-const createUserService = async (name) => {
+const createUserService = async (username) => {
   try {
     const newUser = await User.create({
-      name,
+      username,
     })
     return newUser
   } catch (e) {
@@ -12,10 +12,10 @@ const createUserService = async (name) => {
 }
 
 const createUserHandler = async (req, res) => {
-  const { name } = req.body
+  const { username } = req.body
   try {
-    createUserService(name)
-    res.sendStatus(200)
+    const user = await createUserService(username)
+    res.status(200).json({ user: user.username })
   } catch (e) {
     throw new Error(e)
   }

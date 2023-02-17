@@ -8,9 +8,11 @@ const messagesSchema = new mongoose.Schema(
       unique: true,
       default: () => `message_${uuidv4()}`,
     },
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+    content: {
+      type: String,
+    },
+    username: {
+      type: String,
     },
   },
   {
