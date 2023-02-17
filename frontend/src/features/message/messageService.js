@@ -3,27 +3,27 @@ import axios from 'axios'
 const API_URL = 'http://localhost:3500/api/'
 
 // create new message
-const createMessage = async (messageData, token) => {
+const createMessage = async (content) => {
 	const config = {
 		headers: {
-			Authorization: `Bearer ${token}`
+			Authorization: `Bearer`
 		}
 	}
 
-	const response = await axios.post(API_URL+'/messages', messageData, config)
+	const response = await axios.post(API_URL+'messages', content, config)
 
 	return response.data
 }
 
 // get user messages
-const getMessages = async (token) => {
+const getMessages = async () => {
 	const config = {
 		headers: {
-			Authorization: `Bearer ${token}`
+			Authorization: `Bearer`
 		}
 	}
 
-	const response = await axios.get(API_URL+ '/view-messages', config)
+	const response = await axios.get(API_URL+ 'view-messages', config)
 
 	return response.data
 }

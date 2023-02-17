@@ -12,10 +12,10 @@ const initialState = {
 // Create new message
 export const createMessage = createAsyncThunk(
   'messages/create',
-  async (messageData, thunkAPI) => {
+  async (content, thunkAPI) => {
     try {
-      const token = thunkAPI.getState().auth.user.token
-      return await messageService.createMessage(messageData, token)
+      // const token = thunkAPI.getState().auth.user.token
+      return await messageService.createMessage(content)
     } catch (error) {
       const message =
         (error.response &&
@@ -33,8 +33,8 @@ export const getMessages = createAsyncThunk(
   'messages/getAll',
   async (_, thunkAPI) => {
     try {
-      const token = thunkAPI.getState().auth.user.token
-      return await messageService.getMessages(token)
+      // const token = thunkAPI.getState().auth.user.token
+      return await messageService.getMessages()
     } catch (error) {
       const message =
         (error.response &&
