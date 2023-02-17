@@ -15,7 +15,7 @@ const retriveMessageService = async () => {
 const retriveMessageHandler = async (req, res) => {
   try {
     const messages = await retriveMessageService()
-    res.status(200).json({ messages })
+    res.status(200).json(messages)
   } catch (e) {
     console.log(e)
   }
